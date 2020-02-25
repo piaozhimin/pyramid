@@ -1,0 +1,27 @@
+#!/bin/bash
+#使用bash语言调用tophat源程序，获得比对结果
+#调用该程序需输入3个参数：i:为需要质控的数据文件所在位置；d:index所在位置；o:结果输出位置
+para='';
+while getopts "i:d:o:" opt 
+do 
+	case $opt in 
+		i) 
+		para=$OPTARG
+		;; 
+		d) 
+		index=$OPTARG
+		;; 
+		o) 
+		out_path=$OPTARG
+		;; 
+		?) 
+		echo "未知参数" exit 1
+		;;
+	esac
+done
+#将程序环境切换到Python2，此处有待修改
+source /usr/local/anaconda3/bin/activate python2.7
+#进行比对回帖
+tophat2 -o ${out_path} -p 10 ${index} ${para}
+#将程序环境切换回到Python3，此处有待修改
+conda deactivate

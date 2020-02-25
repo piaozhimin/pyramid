@@ -1,0 +1,326 @@
+
+[2020-02-24 11:17:19] Beginning TopHat run (v2.1.1)
+-----------------------------------------------
+[2020-02-24 11:17:19] Checking for Bowtie
+Started analysis of normal_1_A_1.fastq
+		  Bowtie version:	 2.3.5.0
+[2020-02-24 11:17:19] Checking for Bowtie index files (genome)..
+[2020-02-24 11:17:19] Checking for reference FASTA file
+[2020-02-24 11:17:19] Generating SAM header for /home/igenome/hg19/Bowtie2Index/genome
+[2020-02-24 11:17:21] Preparing reads
+Approx 5% complete for normal_1_A_1.fastq
+Approx 10% complete for normal_1_A_1.fastq
+Approx 15% complete for normal_1_A_1.fastq
+Approx 20% complete for normal_1_A_1.fastq
+Approx 25% complete for normal_1_A_1.fastq
+Approx 30% complete for normal_1_A_1.fastq
+Approx 35% complete for normal_1_A_1.fastq
+Approx 40% complete for normal_1_A_1.fastq
+Approx 45% complete for normal_1_A_1.fastq
+Approx 50% complete for normal_1_A_1.fastq
+Approx 55% complete for normal_1_A_1.fastq
+Approx 60% complete for normal_1_A_1.fastq
+Approx 65% complete for normal_1_A_1.fastq
+Approx 70% complete for normal_1_A_1.fastq
+Approx 75% complete for normal_1_A_1.fastq
+Approx 80% complete for normal_1_A_1.fastq
+Approx 85% complete for normal_1_A_1.fastq
+Approx 90% complete for normal_1_A_1.fastq
+Approx 95% complete for normal_1_A_1.fastq
+Started analysis of normal_1_A_2.fastq
+Approx 5% complete for normal_1_A_2.fastq
+Approx 10% complete for normal_1_A_2.fastq
+Approx 15% complete for normal_1_A_2.fastq
+Approx 20% complete for normal_1_A_2.fastq
+Approx 25% complete for normal_1_A_2.fastq
+Approx 30% complete for normal_1_A_2.fastq
+Approx 35% complete for normal_1_A_2.fastq
+Approx 40% complete for normal_1_A_2.fastq
+Approx 45% complete for normal_1_A_2.fastq
+Approx 50% complete for normal_1_A_2.fastq
+Approx 55% complete for normal_1_A_2.fastq
+Approx 60% complete for normal_1_A_2.fastq
+Approx 65% complete for normal_1_A_2.fastq
+Approx 70% complete for normal_1_A_2.fastq
+Approx 75% complete for normal_1_A_2.fastq
+Approx 80% complete for normal_1_A_2.fastq
+Approx 85% complete for normal_1_A_2.fastq
+Approx 90% complete for normal_1_A_2.fastq
+Approx 95% complete for normal_1_A_2.fastq
+	 left reads: min. length=100, max. length=100, 8797118 kept reads (35949 discarded)
+	right reads: min. length=100, max. length=100, 8814430 kept reads (18637 discarded)
+[2020-02-24 11:22:03] Mapping left_kept_reads to genome genome with Bowtie2 
+[2020-02-24 11:35:19] Mapping left_kept_reads_seg1 to genome genome with Bowtie2 (1/4)
+[2020-02-24 11:36:48] Mapping left_kept_reads_seg2 to genome genome with Bowtie2 (2/4)
+[2020-02-24 11:39:47] Mapping left_kept_reads_seg3 to genome genome with Bowtie2 (3/4)
+[2020-02-24 11:42:56] Mapping left_kept_reads_seg4 to genome genome with Bowtie2 (4/4)
+[2020-02-24 11:46:20] Mapping right_kept_reads to genome genome with Bowtie2 
+[2020-02-24 11:59:29] Mapping right_kept_reads_seg1 to genome genome with Bowtie2 (1/4)
+[2020-02-24 12:00:53] Mapping right_kept_reads_seg2 to genome genome with Bowtie2 (2/4)
+[2020-02-24 12:02:49] Mapping right_kept_reads_seg3 to genome genome with Bowtie2 (3/4)
+[2020-02-24 12:04:53] Mapping right_kept_reads_seg4 to genome genome with Bowtie2 (4/4)
+[2020-02-24 12:07:04] Searching for junctions via segment mapping
+[2020-02-24 12:10:31] Retrieving sequences for splices
+[2020-02-24 12:11:48] Indexing splices
+Building a SMALL index
+[2020-02-24 12:12:00] Mapping left_kept_reads_seg1 to genome segment_juncs with Bowtie2 (1/4)
+[2020-02-24 12:12:17] Mapping left_kept_reads_seg2 to genome segment_juncs with Bowtie2 (2/4)
+[2020-02-24 12:12:44] Mapping left_kept_reads_seg3 to genome segment_juncs with Bowtie2 (3/4)
+[2020-02-24 12:13:12] Mapping left_kept_reads_seg4 to genome segment_juncs with Bowtie2 (4/4)
+[2020-02-24 12:13:40] Joining segment hits
+[2020-02-24 12:15:52] Mapping right_kept_reads_seg1 to genome segment_juncs with Bowtie2 (1/4)
+[2020-02-24 12:16:07] Mapping right_kept_reads_seg2 to genome segment_juncs with Bowtie2 (2/4)
+[2020-02-24 12:16:29] Mapping right_kept_reads_seg3 to genome segment_juncs with Bowtie2 (3/4)
+[2020-02-24 12:16:50] Mapping right_kept_reads_seg4 to genome segment_juncs with Bowtie2 (4/4)
+[2020-02-24 12:17:10] Joining segment hits
+[2020-02-24 12:19:26] Reporting output tracks
+-----------------------------------------------
+[2020-02-24 12:26:51] A summary of the alignment counts can be found in ../out_GSE56087_nor/out_RSeQC/tophat/align_summary.txt
+[2020-02-24 12:26:51] Run complete: 01:09:32 elapsed
+Load BAM file ...  Done
+Totoal read-1 used: 3183264
+Totoal read-2 used: 6115890
+Reading reference bed file:  ./files/hg19_RefSeq.bed  ...  Done
+Load BAM file ...  Done
+
+===================================================================
+Total splicing  Events:	1508903
+Known Splicing Events:	1488490
+Partial Novel Splicing Events:	12698
+Novel Splicing Events:	7715
+
+Total splicing  Junctions:	99948
+Known Splicing Junctions:	92163
+Partial Novel Splicing Junctions:	5324
+Novel Splicing Junctions:	2461
+
+===================================================================
+[bam_sort_core] merging from 3 files and 1 in-memory blocks...
+Process BAM file ...  Total reads used: 1000000
+reading reference bed file:  ./files/hg19_RefSeq.bed  ...  Done! Total 242802 known splicing junctions.
+Load BAM file ...  Done
+shuffling alignments ... Done
+sampling 5% (75372) splicing reads. 29788 splicing junctions. 28837 known splicing junctions. 951 novel splicing junctions.
+sampling 10% (150745) splicing reads. 43830 splicing junctions. 42128 known splicing junctions. 1702 novel splicing junctions.
+sampling 15% (226117) splicing reads. 53435 splicing junctions. 51026 known splicing junctions. 2409 novel splicing junctions.
+sampling 20% (301490) splicing reads. 60576 splicing junctions. 57593 known splicing junctions. 2983 novel splicing junctions.
+sampling 25% (376862) splicing reads. 66219 splicing junctions. 62727 known splicing junctions. 3492 novel splicing junctions.
+sampling 30% (452235) splicing reads. 70876 splicing junctions. 66827 known splicing junctions. 4049 novel splicing junctions.
+sampling 35% (527607) splicing reads. 74863 splicing junctions. 70305 known splicing junctions. 4558 novel splicing junctions.
+sampling 40% (602980) splicing reads. 78190 splicing junctions. 73195 known splicing junctions. 4995 novel splicing junctions.
+sampling 45% (678352) splicing reads. 81157 splicing junctions. 75710 known splicing junctions. 5447 novel splicing junctions.
+sampling 50% (753725) splicing reads. 83746 splicing junctions. 77842 known splicing junctions. 5904 novel splicing junctions.
+sampling 55% (829098) splicing reads. 86022 splicing junctions. 79701 known splicing junctions. 6321 novel splicing junctions.
+sampling 60% (904470) splicing reads. 88096 splicing junctions. 81431 known splicing junctions. 6665 novel splicing junctions.
+sampling 65% (979843) splicing reads. 90018 splicing junctions. 82940 known splicing junctions. 7078 novel splicing junctions.
+sampling 70% (1055215) splicing reads. 91783 splicing junctions. 84330 known splicing junctions. 7453 novel splicing junctions.
+sampling 75% (1130588) splicing reads. 93373 splicing junctions. 85540 known splicing junctions. 7833 novel splicing junctions.
+sampling 80% (1205960) splicing reads. 94879 splicing junctions. 86678 known splicing junctions. 8201 novel splicing junctions.
+sampling 85% (1281333) splicing reads. 96285 splicing junctions. 87736 known splicing junctions. 8549 novel splicing junctions.
+sampling 90% (1356705) splicing reads. 97568 splicing junctions. 88690 known splicing junctions. 8878 novel splicing junctions.
+sampling 95% (1432078) splicing reads. 98732 splicing junctions. 89562 known splicing junctions. 9170 novel splicing junctions.
+sampling 100% (1507451) splicing reads. 99894 splicing junctions. 90388 known splicing junctions. 9506 novel splicing junctions.
+Load BAM file ...  Done
+report duplicte rate based on sequence ...
+report duplicte rate based on mapping  ...
+generate R script ...
+Process BAM file ...  Total reads used: 136646
+Read BAM file ...  Done
+writing GC content ...
+writing R script ...
+Load BAM file ...  Done
+shuffling alignments ... Done
+sampling 5% (286659) forward strand fragments ...
+sampling 5% (269553) reverse strand fragments ...
+assign reads to transcripts in ./files/hg19_RefSeq.bed ...
+
+sampling 10% (573319) forward strand fragments ...
+sampling 10% (539106) reverse strand fragments ...
+assign reads to transcripts in ./files/hg19_RefSeq.bed ...
+
+sampling 15% (859979) forward strand fragments ...
+sampling 15% (808659) reverse strand fragments ...
+assign reads to transcripts in ./files/hg19_RefSeq.bed ...
+
+sampling 20% (1146639) forward strand fragments ...
+sampling 20% (1078212) reverse strand fragments ...
+assign reads to transcripts in ./files/hg19_RefSeq.bed ...
+
+sampling 25% (1433299) forward strand fragments ...
+sampling 25% (1347765) reverse strand fragments ...
+assign reads to transcripts in ./files/hg19_RefSeq.bed ...
+
+sampling 30% (1719958) forward strand fragments ...
+sampling 30% (1617318) reverse strand fragments ...
+assign reads to transcripts in ./files/hg19_RefSeq.bed ...
+
+sampling 35% (2006618) forward strand fragments ...
+sampling 35% (1886871) reverse strand fragments ...
+assign reads to transcripts in ./files/hg19_RefSeq.bed ...
+
+sampling 40% (2293278) forward strand fragments ...
+sampling 40% (2156424) reverse strand fragments ...
+assign reads to transcripts in ./files/hg19_RefSeq.bed ...
+
+sampling 45% (2579938) forward strand fragments ...
+sampling 45% (2425977) reverse strand fragments ...
+assign reads to transcripts in ./files/hg19_RefSeq.bed ...
+
+sampling 50% (2866598) forward strand fragments ...
+sampling 50% (2695531) reverse strand fragments ...
+assign reads to transcripts in ./files/hg19_RefSeq.bed ...
+
+sampling 55% (3153257) forward strand fragments ...
+sampling 55% (2965084) reverse strand fragments ...
+assign reads to transcripts in ./files/hg19_RefSeq.bed ...
+
+sampling 60% (3439917) forward strand fragments ...
+sampling 60% (3234637) reverse strand fragments ...
+assign reads to transcripts in ./files/hg19_RefSeq.bed ...
+
+sampling 65% (3726577) forward strand fragments ...
+sampling 65% (3504190) reverse strand fragments ...
+assign reads to transcripts in ./files/hg19_RefSeq.bed ...
+
+sampling 70% (4013237) forward strand fragments ...
+sampling 70% (3773743) reverse strand fragments ...
+assign reads to transcripts in ./files/hg19_RefSeq.bed ...
+
+sampling 75% (4299897) forward strand fragments ...
+sampling 75% (4043296) reverse strand fragments ...
+assign reads to transcripts in ./files/hg19_RefSeq.bed ...
+
+sampling 80% (4586556) forward strand fragments ...
+sampling 80% (4312849) reverse strand fragments ...
+assign reads to transcripts in ./files/hg19_RefSeq.bed ...
+
+sampling 85% (4873216) forward strand fragments ...
+sampling 85% (4582402) reverse strand fragments ...
+assign reads to transcripts in ./files/hg19_RefSeq.bed ...
+
+sampling 90% (5159876) forward strand fragments ...
+sampling 90% (4851955) reverse strand fragments ...
+assign reads to transcripts in ./files/hg19_RefSeq.bed ...
+
+sampling 95% (5446536) forward strand fragments ...
+sampling 95% (5121508) reverse strand fragments ...
+assign reads to transcripts in ./files/hg19_RefSeq.bed ...
+
+sampling 100% (5733196) forward strand fragments ...
+sampling 100% (5391062) reverse strand fragments ...
+assign reads to transcripts in ./files/hg19_RefSeq.bed ...
+
+@ 2020-02-24 12:29:31: Read BED file (reference gene model) ...
+@ 2020-02-24 12:29:32: Total 4040 transcripts loaded
+@ 2020-02-24 12:29:32: Get BAM file(s) ...
+	../out_GSE56087_nor/out_RSeQC/out.sorted.bam
+@ 2020-02-24 12:29:32: Processing out.sorted.bam ...
+	100 transcripts finished 	200 transcripts finished 	300 transcripts finished 	400 transcripts finished 	500 transcripts finished 	600 transcripts finished 	700 transcripts finished 	800 transcripts finished 	900 transcripts finished 	1000 transcripts finished 	1100 transcripts finished 	1200 transcripts finished 	1300 transcripts finished 	1400 transcripts finished 	1500 transcripts finished 	1600 transcripts finished 	1700 transcripts finished 	1800 transcripts finished 	1900 transcripts finished 	2000 transcripts finished 	2100 transcripts finished 	2200 transcripts finished 	2300 transcripts finished 	2400 transcripts finished 	2500 transcripts finished 	2600 transcripts finished 	2700 transcripts finished 	2800 transcripts finished 	2900 transcripts finished 	3000 transcripts finished 	3100 transcripts finished 	3200 transcripts finished 	3300 transcripts finished 	3400 transcripts finished 	3500 transcripts finished 	3600 transcripts finished 	3700 transcripts finished 	3800 transcripts finished 
+
+
+	Sample	Skewness
+	out.sorted	-4.507610041702008
+@ 2020-02-24 12:34:26: Running R script ...
+Get exon regions from ./files/hg19_RefSeq.bed ...
+Load BAM file ...  Total read pairs  used 1000000
+Load BAM file ...  Done
+Totoal read-1 used: 3183264
+Totoal read-2 used: 6115890
+Read BAM file ...  Done
+generating data matrix ...
+generating R script  ...
+载入需要的程辑包：methods
+1582514238.9997835
+开始线程: Thread-FaToBam
+开始线程: Thread-fastqc
+Checking the input file.
+Fastqc is working.
+开始线程: Thread-afterqc
+Afterqc is working
+bash my_tophat -i '../test_data/normal_1_A_1.fastq ../test_data/normal_1_A_2.fastq' -o ../out_GSE56087_nor/out_RSeQC/tophat -d /home/igenome/hg19/Bowtie2Index/genome
+Fastqc was completed!
+The work of Fastqc was successful
+#############################################################################################
+Afterqc has been successful.
+['filter_stat', 'error_matrix', 'overlap_stat', 'r1_pre_quality', 'r1_pre_content', 'r1_pre_gc', 'r1_pre_discontinuity', 'r1_pre_sb', 'r1_post_quality', 'r1_post_content', 'r1_post_gc', 'r1_post_discontinuity', 'r1_post_sb', 'r2_pre_quality', 'r2_pre_content', 'r2_pre_gc', 'r2_pre_discontinuity', 'r2_pre_sb', 'r2_post_quality', 'r2_post_content', 'r2_post_gc', 'r2_post_discontinuity', 'r2_post_sb']
+#############################################################################################
+['../out_GSE56087_nor/out_RSeQC/tophat/', '../out_GSE56087_nor/out_RSeQC/tophat/align_summary.txt']
+['normal_1_A_1', '100']
+[]
+['../out_GSE56087_nor/out_RSeQC/tophat/', '../out_GSE56087_nor/out_RSeQC/tophat/align_summary.txt', 'normal_1_A_1', '100']
+主进程1结束！
+开始线程: Thread-sortBam
+To resample a series of subsets from total RNA reads and then calculate RPKM value using each subset. 
+开始线程: Thread-clipping
+Samtools is working.
+开始线程: Thread-junction
+Calculating the distributions of clipped nucleotides across reads.
+开始线程: Thread-RPKM
+To compare detected splice junctions to reference gene model. 
+Detecting the result of calculating!
+The work of drawing profile of clipping is successful !
+Converting the resulting PDF file to a PNG file.
+Converting the resulting PDF file to a PNG file.
+#############################################################################################
+Calculating the distribution of mismatches across reads. 
+The detected splicing joints were compared with the reference gene model successfully.
+Converting the resulting PDF file to a PNG file.
+Converting the resulting PDF file to a PNG file.
+#############################################################################################
+This module checks for saturation by resampling 5%, 10%, 15%, ..., 95% of total alignments from BAM or SAM file, and then detects splice junctions from each subset and compares them to reference gene model.
+Successful distribution of mismatches between different reads.
+Converting the resulting PDF file to a PNG file.
+#############################################################################################
+Two strategies were used to determine reads duplication rate.
+Successful comparison with reference gene model.
+Converting the resulting PDF file to a PNG file.
+#############################################################################################
+The work of samtools is successful!
+#############################################################################################
+Calculating the distributions of deletions across reads.
+Two strategies are used to determine the success rate of read repetition.
+Converting the resulting PDF file to a PNG file.
+#############################################################################################
+GC content distribution of reads.
+The deletion distribution between different reads is calculated successfully.
+Converting the resulting PDF file to a PNG file.
+#############################################################################################
+Calculating the RNA-seq reads coverage over gene body.
+The GC content read was successfully distributed.
+Converting the resulting PDF file to a PNG file.
+#############################################################################################
+To check the nucleotide composition bias. 
+Resampling a series of subsets from total RNA readings, and then using each subset to calculate the rpkm value successfully.
+Converting the resulting PDF file to a PNG file.
+#############################################################################################
+Successful coverage of genomes that can be read by computing RNA sequences.
+#############################################################################################
+Calculating inner distance between read pairs.
+Successful calculation of internal distance between read pairs.
+Converting the resulting PDF file to a PNG file.
+#############################################################################################
+Calculating the distributions of inserted nucleotides across reads.
+Detecting this result!
+Successful calculation of the distribution of inserted nucleotides in reading operations.
+Converting the resulting PDF file to a PNG file.
+Converting the resulting PDF file to a PNG file.
+#############################################################################################
+The deviation of nucleotide composition was checked successfully.
+Converting the resulting PDF file to a PNG file.
+#############################################################################################
+主进程2结束！
+The results report PDF file is being generated.
+get pdf!
+pdflatex report_Paired.tex
+bibtex report_Paired
+pdflatex report_Paired.tex
+pdflatex report_Paired.tex
+Data quality control analysis completed.
+Thread-FaToBam 线程结束！
+Thread-fastqc 线程结束！
+Thread-afterqc 线程结束！
+Thread-junction 线程结束！
+Thread-clipping 线程结束！
+Thread-sortBam 线程结束！
+Thread-RPKM 线程结束！
+1582519149.701601 4910.701817512512

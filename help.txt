@@ -1,0 +1,30 @@
+#PYRAMID VERSION = "0.0.1"
+#输入的参数有：
+if name in ("-h","--help"):
+	use_help()
+if name in ("-o","--output"):
+	output_file_path = value
+	judge_dir(output_file_path)
+if name in ("-l","--layout"):
+	layout_type = value
+if name in ("-i","--input"):
+	input_file = value
+if name in ("-s","--species"):
+	species_type = value
+if name in ("-f","--input_Fastq"):
+	input_fastq = value
+if name in ("-b","--input_bam_Dir"):
+	input_bam_path = value
+#输入的物种有：
+if operator.eq(species_type,"Human"):
+	species_type2 = 'hg19'
+	index_path = '/home/igenome/hg19/Bowtie2Index/genome'
+elif operator.eq(species_type,"Mouse"):
+	species_type2 = 'mouse'
+	index_path = '/home/igenome/mm9/Sequence/Bowtie2Index/genome'
+elif operator.eq(species_type,"Zebrafish"):
+	species_type2 = '/home/igenome/zebrafish/Bowtie2Index/genome'
+elif operator.eq(species_type,"Fly"):
+	species_type2 = '/home/igenome/fly/Bowtie2Index/genome'
+else:
+	print("Sorry,we don't have this species information yet.")

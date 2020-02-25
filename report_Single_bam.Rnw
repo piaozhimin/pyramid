@@ -1,0 +1,171 @@
+\documentclass[a4paper,12pt]{report}
+\usepackage[a4paper]{geometry}
+\usepackage{graphicx}
+\geometry{left=2cm,right=2cm,bottom=2cm}
+\usepackage{Sweave}
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage{indentfirst}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{1em}
+\setlength{\topmargin}{-1em}
+\renewcommand{\bibname}{reference}
+\usepackage[colorlinks,
+            linkcolor=black,
+            anchorcolor=black, 
+            citecolor=black,
+            ]{hyperref}
+\fancypagestyle{plain}{
+    \fancyhf{}
+    \lhead{}
+	\chead{Python-based RNA-Seq pipeline for Automatically intergrated quality control}
+	\rhead{}
+	\lfoot{}
+	\cfoot{\thepage}
+	\rfoot{}
+}
+
+\begin{document}
+\SweaveOpts{pdf=TRUE, eps=FALSE}
+  	
+	\begin{titlepage}
+		\vspace*{20pt}
+		
+		\begin{center}
+			\Huge  Python-based RNA-Seq pipeline for Automatically intergrated quality control\\
+		\end{center}
+		\vspace*{50pt}
+		\begin{figure}[H]
+				\centering  
+				\includegraphics [width=0.5\linewidth]{pyramid.png}
+			\end{figure}
+		\vspace*{50pt}
+			
+	\LARGE \hspace*{4.5cm}Sample-name\hspace{2mm}:\hspace{0.5cm}\Sexpr{sample} 
+
+    \LARGE \hspace*{5.1cm}Timestamp\hspace{2mm}:\hspace{0.5cm}\Sexpr{today} \\
+	\end{titlepage}
+	
+	\pagenumbering{roman}
+	\pagestyle{fancy}
+	\lhead{}
+	\chead{Python-based RNA-Seq pipeline for Automatically intergrated quality control}
+	\rhead{}
+
+	\lfoot{}
+	\cfoot{\thepage}
+	\rfoot{}
+	
+	\tableofcontents
+
+	\newpage
+	\pagenumbering{arabic}
+	\setcounter{page}{1}
+	\large
+
+% -------------------------------------
+
+	\chapter{Introduction}  % Report style
+	Here comes the introduction to a paper.
+	
+	% Following sections, subsections, etc.
+% -------------------------------------
+	\chapter{FastQC Result}  % Report style
+	  \section{Per base sequence quality}  % Report style
+	  	This view shows an overview of all the base quality value ranges for each position in the FastQ file.The y-axis on the graph shows the quality scores. The higher the score the better the base call. The background of the graph divides the y axis into very good quality calls (green), calls of reasonable quality (orange), and calls of poor quality (red).The title of the graph will describe the encoding FastQC thinks your file used.
+
+	  	For each position a BoxWhisker type plot is drawn. The elements of the plot are as follows:
+	    \begin{itemize}
+		    \item[-] The central red line is the median value.
+		    \item[-] The yellow box represents the inter-quartile range (25-75\%).
+		    \item[-] The upper and lower whiskers represent the 10\% and 90% points.
+		    \item[-] The blue line represents the mean quality.
+	    \end{itemize}
+
+  		\begin{figure}[H]
+  			\centering 
+  			\includegraphics [width=18cm,height=16cm]{\Sexpr{figures_fqc[1]}}
+  		\end{figure}
+% -------------------------------------
+	\chapter{RSeQC Result} 
+		\section{Calculate the distributions of clipped nucleotides across reads}
+		\begin{figure}[H]
+			\centering 
+			\includegraphics{\Sexpr{figures_rsqc[1]}}
+		\end{figure}
+	
+		\newpage
+		
+		\section{Calculate the distributions of deletions across reads}  % Report style
+			\begin{figure}[H]
+				\centering 
+				\includegraphics{\Sexpr{figures_rsqc[2]}}
+			\end{figure}
+		
+		\newpage
+		
+		\section{Calculate the RNA-seq reads coverage over gene body}  % Report style
+			\begin{figure}[H]
+				\centering    
+				\includegraphics{\Sexpr{figures_rsqc[3]}}
+			\end{figure}
+			
+		\newpage
+		
+		\section{Calculate the distributions of inserted nucleotides across reads}  % Report style
+			\begin{figure}[H]
+				\centering    
+				\includegraphics{\Sexpr{figures_rsqc[4]}}
+			\end{figure}
+			
+		\newpage
+		
+		\section{Splicing sites of each subset were detected and compared with the reference gene model}  % Report style
+			\begin{figure}[H]
+				\centering 
+				\includegraphics{\Sexpr{figures_rsqc[5]}}
+			\end{figure}
+
+		\newpage
+		
+		\section{Calculate the distribution of mismatches across reads}  % Report style
+			\begin{figure}[H]
+				\centering    
+				\includegraphics{\Sexpr{figures_rsqc[6]}}
+			\end{figure}
+			
+		\newpage
+		
+		\section{Two strategies were used to determine reads duplication rate}  % Report style
+			\begin{figure}[H]
+				\centering 
+				\includegraphics{\Sexpr{figures_rsqc[7]}}
+			\end{figure}
+		
+		\newpage
+		
+		\section{GC content distribution of reads}  % Report style
+			\begin{figure}[H]
+				\centering    
+				\includegraphics{\Sexpr{figures_rsqc[8]}}
+			\end{figure}
+			
+		\newpage
+		
+		\section{Check for nucleotide composition bias}  % Report style
+			\begin{figure}[H]
+				\centering 
+				\includegraphics{\Sexpr{figures_rsqc[9]}}
+			\end{figure}
+			
+		\newpage
+		
+		\section{RPKM saturation}  % Report style
+			\begin{figure}[H]
+				\centering 
+				\includegraphics{\Sexpr{figures_rsqc[10]}}
+			\end{figure}
+
+\bibliographystyle{plain}
+\bibliography{afterQC.bib}	
+\end{document}

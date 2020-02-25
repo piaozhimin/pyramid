@@ -1,0 +1,30 @@
+#!/bin/bash
+#使用bash语言调用afterqc源程序，获得afterqc质控结果
+#调用该程序需输入两个参数：i:为需要质控的数据文件所在位置；t:数据类型（单端 or 双端）
+para='';
+while getopts "i:t:" opt 
+do 
+	case $opt in 
+		i) 
+		para=$OPTARG
+		;; 
+		t) 
+		end_type=$OPTARG
+		;; 
+		?) 
+		echo "未知参数" exit 1
+		;;
+	esac
+done
+#将程序环境切换到Python2，此处有待修改
+source /usr/local/anaconda3/bin/activate python2.7
+if (( $end_type == 1 ))
+then
+    after.py --qc_only -1 ${para}
+else
+	IFS=',' arr=($para)
+	after.py --qc_only -1 ${arr[0]} -2 ${arr[1]}
+fi
+#将程序环境切换回到Python3，此处有待修改
+#source /usr/local/anaconda3/bin/deactivate python2.7
+conda deactivate

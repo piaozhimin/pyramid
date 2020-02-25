@@ -1,0 +1,38 @@
+
+[2020-02-24 11:17:19] Beginning TopHat run (v2.1.1)
+-----------------------------------------------
+[2020-02-24 11:17:19] Checking for Bowtie
+		  Bowtie version:	 2.3.5.0
+[2020-02-24 11:17:19] Checking for Bowtie index files (genome)..
+[2020-02-24 11:17:19] Checking for reference FASTA file
+[2020-02-24 11:17:19] Generating SAM header for /home/igenome/hg19/Bowtie2Index/genome
+[2020-02-24 11:17:21] Preparing reads
+	 left reads: min. length=100, max. length=100, 8797118 kept reads (35949 discarded)
+	right reads: min. length=100, max. length=100, 8814430 kept reads (18637 discarded)
+[2020-02-24 11:22:03] Mapping left_kept_reads to genome genome with Bowtie2 
+[2020-02-24 11:35:19] Mapping left_kept_reads_seg1 to genome genome with Bowtie2 (1/4)
+[2020-02-24 11:36:48] Mapping left_kept_reads_seg2 to genome genome with Bowtie2 (2/4)
+[2020-02-24 11:39:47] Mapping left_kept_reads_seg3 to genome genome with Bowtie2 (3/4)
+[2020-02-24 11:42:56] Mapping left_kept_reads_seg4 to genome genome with Bowtie2 (4/4)
+[2020-02-24 11:46:20] Mapping right_kept_reads to genome genome with Bowtie2 
+[2020-02-24 11:59:29] Mapping right_kept_reads_seg1 to genome genome with Bowtie2 (1/4)
+[2020-02-24 12:00:53] Mapping right_kept_reads_seg2 to genome genome with Bowtie2 (2/4)
+[2020-02-24 12:02:49] Mapping right_kept_reads_seg3 to genome genome with Bowtie2 (3/4)
+[2020-02-24 12:04:53] Mapping right_kept_reads_seg4 to genome genome with Bowtie2 (4/4)
+[2020-02-24 12:07:04] Searching for junctions via segment mapping
+[2020-02-24 12:10:31] Retrieving sequences for splices
+[2020-02-24 12:11:48] Indexing splices
+[2020-02-24 12:12:00] Mapping left_kept_reads_seg1 to genome segment_juncs with Bowtie2 (1/4)
+[2020-02-24 12:12:17] Mapping left_kept_reads_seg2 to genome segment_juncs with Bowtie2 (2/4)
+[2020-02-24 12:12:44] Mapping left_kept_reads_seg3 to genome segment_juncs with Bowtie2 (3/4)
+[2020-02-24 12:13:12] Mapping left_kept_reads_seg4 to genome segment_juncs with Bowtie2 (4/4)
+[2020-02-24 12:13:40] Joining segment hits
+[2020-02-24 12:15:52] Mapping right_kept_reads_seg1 to genome segment_juncs with Bowtie2 (1/4)
+[2020-02-24 12:16:07] Mapping right_kept_reads_seg2 to genome segment_juncs with Bowtie2 (2/4)
+[2020-02-24 12:16:29] Mapping right_kept_reads_seg3 to genome segment_juncs with Bowtie2 (3/4)
+[2020-02-24 12:16:50] Mapping right_kept_reads_seg4 to genome segment_juncs with Bowtie2 (4/4)
+[2020-02-24 12:17:10] Joining segment hits
+[2020-02-24 12:19:26] Reporting output tracks
+-----------------------------------------------
+[2020-02-24 12:26:51] A summary of the alignment counts can be found in ../out_GSE56087_nor/out_RSeQC/tophat/align_summary.txt
+[2020-02-24 12:26:51] Run complete: 01:09:32 elapsed

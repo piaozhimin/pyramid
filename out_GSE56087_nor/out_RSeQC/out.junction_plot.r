@@ -1,0 +1,8 @@
+pdf("../out_GSE56087_nor/out_RSeQC/out.splice_events.pdf")
+events=c(0.8415385216942375,0.511298605675779,98.64716287262998)
+pie(events,col=c(2,3,4),init.angle=30,angle=c(60,120,150),density=c(70,70,70),main="splicing events",labels=c("partial_novel 1%","complete_novel 1%","known 99%"))
+dev.off()
+pdf("../out_GSE56087_nor/out_RSeQC/out.splice_junction.pdf")
+junction=c(5.326769920358586,2.462280385800616,92.2109496938408)
+pie(junction,col=c(2,3,4),init.angle=30,angle=c(60,120,150),density=c(70,70,70),main="splicing junctions",labels=c("partial_novel 5%","complete_novel 2%","known 92%"))
+dev.off()

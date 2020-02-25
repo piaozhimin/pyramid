@@ -1,0 +1,355 @@
+\documentclass[a4paper,12pt]{report}
+\usepackage[a4paper]{geometry}
+\usepackage{graphicx}
+\geometry{left=2cm,right=2cm,bottom=2cm}
+\usepackage{Sweave}
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage{indentfirst}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{1em}
+\setlength{\topmargin}{-1em}
+\renewcommand{\bibname}{reference}
+\usepackage[colorlinks,
+            linkcolor=black,
+            anchorcolor=black, 
+            citecolor=black,
+            ]{hyperref}
+\fancypagestyle{plain}{
+    \fancyhf{}
+    \lhead{}
+	\chead{Python-based RNA-Seq pipeline for Automatically intergrated quality control}
+	\rhead{}
+	\lfoot{}
+	\cfoot{\thepage}
+	\rfoot{}
+}
+
+\begin{document}
+\SweaveOpts{pdf=TRUE, eps=FALSE}
+  	
+	\begin{titlepage}
+		\vspace*{20pt}
+		
+		\begin{center}
+			\Huge  Python-based RNA-Seq pipeline for Automatically intergrated quality control\\
+		\end{center}
+		\vspace*{50pt}
+		\begin{figure}[H]
+				\centering  
+				\includegraphics [width=0.5\linewidth]{pyramid.png}
+			\end{figure}
+		\vspace*{50pt}
+			
+	\LARGE \hspace*{4.5cm}Sample-name\hspace{2mm}:\hspace{0.5cm}\Sexpr{sample} 
+
+    \LARGE \hspace*{5.1cm}Timestamp\hspace{2mm}:\hspace{0.5cm}\Sexpr{today} \\
+	\end{titlepage}
+	
+	\pagenumbering{roman}
+	\pagestyle{fancy}
+	\lhead{}
+	\chead{Python-based RNA-Seq pipeline for Automatically intergrated quality control}
+	\rhead{}
+
+	\lfoot{}
+	\cfoot{\thepage}
+	\rfoot{}
+	
+	\tableofcontents
+
+	\newpage
+	\pagenumbering{arabic}
+	\setcounter{page}{1}
+	\large
+
+% -------------------------------------
+
+	\chapter{Introduction}  % Report style
+	Here comes the introduction to a paper.
+	
+	% Following sections, subsections, etc.
+% -------------------------------------
+	\chapter{FastQC Result}  % Report style
+	  \section{Per base sequence quality}  % Report style
+	  	This view shows an overview of all the base quality value ranges for each position in the FastQ file.The y-axis on the graph shows the quality scores. The higher the score the better the base call. The background of the graph divides the y axis into very good quality calls (green), calls of reasonable quality (orange), and calls of poor quality (red).The title of the graph will describe the encoding FastQC thinks your file used.
+
+	  	For each position a BoxWhisker type plot is drawn. The elements of the plot are as follows:
+	    \begin{itemize}
+		    \item[-] The central red line is the median value.
+		    \item[-] The yellow box represents the inter-quartile range (25-75\%).
+		    \item[-] The upper and lower whiskers represent the 10\% and 90% points.
+		    \item[-] The blue line represents the mean quality.
+	    \end{itemize}
+
+  		\begin{figure}[H]
+  			\centering 
+  			\includegraphics [width=18cm,height=16cm]{\Sexpr{figures_fqc[1]}}
+  		\end{figure}
+% -------------------------------------
+	
+	\chapter{AfterQC results}  % Report style
+	
+		\section{AfterQC summary}  % Article style
+
+			This view is a summary of the digital results of the quality control analysis performed by the AfterQC software on the RAN-seq data input by the user. Content contains AfterQC Version, sequencing, total reads, filtered out reads, total bases, filtered out bases, auto trimming, etc.
+
+			\vspace*{20pt}
+			\begin{figure}[H]
+				\centering  
+				\includegraphics [width=18cm,height=8cm]{\Sexpr{figures_afqc[1]}}
+			\end{figure}
+
+		\newpage
+		
+		\section{Good reads and bad reads after filtering}
+
+			This view is the result of AfterQC software filtering the user-input ran-seq data and summarizing the filtering results into a pie chart. The total number of reads is the statistical data of the 200,000 readings of the filtered samples. The content includes the circular pie graph and the legend corresponding to the figure, which are synthesized from good reads, has polyX reads, low quality reads, too short reads and too many N reads.
+
+			In the figure, blue indicates good reads, yellow indicates has ployX reads, green indicates low quality reads, red indicates too short reads, purple indicates too many N reads.
+
+			From the figure, it can be visually seen whether the various indicators of the sequencing result input by the user are up to standard.
+
+			\vspace*{20pt}
+			\begin{figure}[H]
+				\centering  
+				\includegraphics [width=16cm,height=12cm]{\Sexpr{figures_afqc[2]}}
+			\end{figure}
+			
+		\newpage
+		
+		\section{Quality curve before filtering}  % Report style
+
+			This view is the curve that quality of before filtering. It not only plots the quality of A, T, C, and G for each locus in the user-entered sequencing results file, but also plots the mass average of four bases per locus. The red curve represents the result of A base, the purple curve represents the result of T base , the green curve represents the result of C base , the blue curve represents the result of G base , and the black curve represents the result of the average.
+
+			The abscissa represents the locus and the ordinate represents the mass fraction.
+
+			\begin{figure}[H]
+				\centering 
+				\includegraphics [width=18cm,height=14cm]{\Sexpr{figures_afqc[3]}} 
+			\end{figure}
+
+		\newpage
+		
+		\section{Base content distribution before filtering}  % Report style
+
+			This view is the curve that the base content distribution of before filtering. It plots the proportion of A, T, C, G, and GC at each locus in the sequencing results file entered by the user. The red curve indicates the result of the A base, the purple curve indicates the result of the T base, the green curve indicates the result of the C base, the blue curve indicates the result of the G base, and the black curve indicates the result of the sum of the GC.The abscissa indicates the locus and the ordinate indicates the proportion.
+
+			In a random library you would expect that there would be little to no difference between the different bases of a sequence run, so the lines in this plot should run parallel with each other. The relative amount of each base should reflect the overall amount of these bases in your genome, but in any case they should not be hugely imbalanced from each other.\cite{Chen2017AfterQC}
+
+			\begin{figure}[H]
+				\centering 
+				\includegraphics [width=18cm,height=14cm]{\Sexpr{figures_afqc[4]}} 
+			\end{figure}
+	  
+	    \newpage
+	  	
+		\section{GC curve before filtering}  % Report style
+
+			This view measures the GC content across the whole length of each sequence in the fastq file of before filtering.In a normal random library you would expect to see a roughly normal distribution of GC content where the central peak corresponds to the overall GC content of the underlying genome.  
+
+			An unusually shaped distribution could indicate a contaminated library or some other kinds of biased subset. A normal distribution which is shifted indicates some systematic bias which is independent of base position.
+
+			Values in X-axis represent the GC content(\%), and the values in Y-axis represent the counts.
+
+			\begin{figure}[H]
+				\centering  
+				\includegraphics[width=18cm,height=14cm]{\Sexpr{figures_afqc[5]}}
+			\end{figure}
+			
+		\newpage
+
+		\section{Per base discontinuity before filtering}  % Report style
+
+			Besides normal per-cycle base content and quality profiling, AfterQC implements a methods to give more information about per-cycle discontinuity profiling to reflect sequencing quality instability. 
+
+			The mean discontinuity should be more or less stable for all sequencing cycles. For a short window of sequencing cycles, it use the average discontinued base number in this window to calculate the discontinuity. If discontinuity drops down significantly cycle by cycle, it usually reflects a sequencing issue, which may be caused by the per-cycle washing process not working well. 
+
+			The view is a curve that the per base discontinuity before filtering. The abscissa indicates cycles and the ordinate indicates discontinuity.
+
+			\begin{figure}[H]
+				\centering  
+				\includegraphics[width=18cm,height=14cm]{\Sexpr{figures_afqc[6]}} 
+			\end{figure}
+
+	    \newpage
+	    
+		\section{Kmer strand bias before filtering}  % Report style
+
+			Besides normal per-cycle base content and quality profiling, AfterQC implements novel method to give more information about sequencing quality: strand bias profiling to reflect amplification bias. The method is based on a hypothesis: if the DNA amplification process and sequencing process have only little non-uniformity, the repeat count of a short K-MER should be close to the repeat count of its reverse complement. So we plot each K-MER and its reverse complement's counts, and check whether most points are near the line y=x.
+
+			The view is kmer strand bias before filtering.X-axis is about the counts of relative forward strand K-MERs, while the Y-axis is about relative reverse ones.
+
+			\begin{figure}[H]
+				\centering  
+				\includegraphics [width=18cm,height=14cm]{\Sexpr{figures_afqc[7]}} 
+			\end{figure}
+			
+		\newpage
+		
+		\section{Quality curve after filtering}  % Report style
+
+			This view is the curve that quality of after filtering. It not only plots the quality of A, T, C, and G for each locus in the user-entered sequencing results file, but also plots the mass average of four bases per locus. The red curve represents the result of A base, the purple curve represents the result of T base , the green curve represents the result of C base , the blue curve represents the result of G base , and the black curve represents the result of the average.
+
+			The abscissa represents the locus and the ordinate represents the mass fraction.
+
+			\begin{figure}[H]
+				\centering 
+				\includegraphics[width=18cm,height=14cm]{\Sexpr{figures_afqc[8]}} 
+			\end{figure}
+			
+		\newpage
+		
+		\section{Base content distribution after filtering}  % Report style
+
+			This view is the curve that the base content distribution of after filtering. It plots the proportion of A, T, C, G, and GC at each locus in the sequencing results file entered by the user. The red curve indicates the result of the A base, the purple curve indicates the result of the T base, the green curve indicates the result of the C base, the blue curve indicates the result of the G base, and the black curve indicates the result of the sum of the GC.The abscissa indicates the locus and the ordinate indicates the proportion.
+
+			AfterQC only trims very few cycles for data with good sequencing quality (i.e. 1 base in front, and 1 base in tail). However, for some extreme cases, the sequencing quality is quite low, and the mean base content percentage or quality curves can be totally chaotic. To not trim too many data for such cases, AfterQC limits the trimming cycles both in front and tail. The default setting is no more than 10% in front and no more than 5% in tail.
+			After trimming is done, AfterQC will apply a series of filters on the reads. AfterQC implements quality filters and polyX filters. 
+
+			\begin{figure}[H]
+				\centering  
+				\includegraphics[width=18cm,height=14cm]{\Sexpr{figures_afqc[9]}}
+			\end{figure}
+
+	 	\newpage
+	 	
+		\section{GC curve after filtering}  % Report style
+
+			This view measures the GC content across the whole length of each sequence in the fastq file of after filtering.In a normal random library you would expect to see a roughly normal distribution of GC content where the central peak corresponds to the overall GC content of the underlying genome.  
+
+			An unusually shaped distribution could indicate a contaminated library or some other kinds of biased subset. A normal distribution which is shifted indicates some systematic bias which is independent of base position.
+
+			Values in X-axis represent the GC content(\%), and the values in Y-axis represent the counts.
+
+			\begin{figure}[H]
+				\centering 
+				\includegraphics[width=18cm,height=14cm]{\Sexpr{figures_afqc[10]}}
+			\end{figure}
+			
+		\newpage
+		
+		\section{Per base discontinuity after filtering}  % Report style
+
+			Besides normal per-cycle base content and quality profiling, AfterQC implements a methods to give more information about per-cycle discontinuity profiling to reflect sequencing quality instability. 
+
+			The mean discontinuity should be more or less stable for all sequencing cycles. For a short window of sequencing cycles, it use the average discontinued base number in this window to calculate the discontinuity. If discontinuity drops down significantly cycle by cycle, it usually reflects a sequencing issue, which may be caused by the per-cycle washing process not working well. 
+
+			The view is a curve that the per base discontinuity after filtering. The abscissa indicates cycles and the ordinate indicates discontinuity.
+
+			\begin{figure}[H]
+				\centering 
+				\includegraphics[width=18cm,height=14cm]{\Sexpr{figures_afqc[11]}} 
+			\end{figure}
+
+	    \newpage
+	    
+		\section{Kmer strand bias after filtering}  % Report style
+
+			Besides normal per-cycle base content and quality profiling, AfterQC implements novel method to give more information about sequencing quality: strand bias profiling to reflect amplification bias. The method is based on a hypothesis: if the DNA amplification process and sequencing process have only little non-uniformity, the repeat count of a short K-MER should be close to the repeat count of its reverse complement. So we plot each K-MER and its reverse complement's counts, and check whether most points are near the line y=x.
+
+			The view is kmer strand bias after filtering. X-axis is about the counts of relative forward strand K-MERs, while the Y-axis is about relative reverse ones.
+
+			\begin{figure}[H]
+				\centering  
+				\includegraphics [width=18cm,height=14cm]{\Sexpr{figures_afqc[12]}} 
+			\end{figure}
+			
+	% -------------------------------------
+	\chapter{RSeQC Result} 
+		\section{Calculate the distributions of clipped nucleotides across reads}
+
+			This module is used to estimate clipping profile of RNA-seq reads from BAM file. Double-end sequencing has two result plots, one for read1 and one for read2. There is only one result plot in single-ended sequencing.
+
+			The view is the estimated clipping profile of the bam file by user inputed.The abscissa indicates position of reads and the ordinate indicates the ratio of non-clipped.
+
+			\begin{figure}[H]
+				\centering 
+				\includegraphics{\Sexpr{figures_rsqc[1]}}
+			\end{figure}
+		
+		\newpage
+		
+		\section{Calculate the distributions of deletions across reads}  % Report style
+
+
+
+			\begin{figure}[H]
+				\centering 
+				\includegraphics{\Sexpr{figures_rsqc[2]}}
+			\end{figure}
+		
+		\newpage
+		
+		\section{Calculate the RNA-seq reads coverage over gene body}  % Report style
+			\begin{figure}[H]
+				\centering    
+				\includegraphics{\Sexpr{figures_rsqc[3]}}
+			\end{figure}
+			
+		\newpage
+		
+		\section{Calculate the distributions of inserted nucleotides across reads}  % Report style
+			\begin{figure}[H]
+				\centering    
+				\includegraphics{\Sexpr{figures_rsqc[4]}}
+			\end{figure}
+			
+		\newpage
+		
+		\section{Splicing sites of each subset were detected and compared with the reference gene model}  % Report style
+			\begin{figure}[H]
+				\centering 
+				\includegraphics{\Sexpr{figures_rsqc[5]}}
+			\end{figure}
+
+		\newpage
+		
+		\section{Calculate the distribution of mismatches across reads}  % Report style
+			\begin{figure}[H]
+				\centering    
+				\includegraphics{\Sexpr{figures_rsqc[6]}}
+			\end{figure}
+			
+		\newpage
+		
+		\section{Two strategies were used to determine reads duplication rate}  % Report style
+			\begin{figure}[H]
+				\centering 
+				\includegraphics{\Sexpr{figures_rsqc[7]}}
+			\end{figure}
+		
+		\newpage
+		
+		\section{GC content distribution of reads}  % Report style
+
+			This view measures the GC content across the whole length of each sequence in a bam file.In a normal random library you would expect to see a roughly normal distribution of GC content where the central peak corresponds to the overall GC content of the underlying genome. 
+
+			An unusually shaped distribution could indicate a contaminated library or some other kinds of biased subset. A normal distribution which is shifted indicates some systematic bias which is independent of base position.
+
+			Values in X-axis represent the GC content(\%), and the values in Y-axis represent the Density of Reads.
+
+			\begin{figure}[H]
+				\centering    
+				\includegraphics{\Sexpr{figures_rsqc[8]}}
+			\end{figure}
+			
+		\newpage
+		
+		\section{Check for nucleotide composition bias}  % Report style
+			\begin{figure}[H]
+				\centering 
+				\includegraphics{\Sexpr{figures_rsqc[9]}}
+			\end{figure}
+			
+		\newpage
+		
+		\section{RPKM saturation}  % Report style
+			\begin{figure}[H]
+				\centering 
+				\includegraphics{\Sexpr{figures_rsqc[10]}}
+			\end{figure}
+
+\bibliographystyle{plain}
+\bibliography{afterQC.bib}	
+\end{document}
